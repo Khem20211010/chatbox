@@ -17,14 +17,10 @@ jobs:
         run: git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main  
 
 name: Python safety check
-
 on:
   push:
     branches:
       - main
-
-env:
-  DEP_PATH: C:\Users\Limbu Khem\Desktop\chatbot/requirements.txt
 
 jobs:
   build:
@@ -34,5 +30,9 @@ jobs:
         uses: actions/checkout@main
 
       - name: Security vulnerabilities scan
+	env:
+  	  DEP_PATH: C:\Users\Limbu Khem\Desktop\chatbot/requirements.txt
 	uses: aufdenpunkt/python-safety-check@main
+	with:
+    	  scan_requirements_file_only: 'true'
 
