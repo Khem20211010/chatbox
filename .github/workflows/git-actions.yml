@@ -26,13 +26,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out main
-        uses: actions/checkout@main
-
+      - uses: aufdenpunkt/python-safety-check@main
+        with:
+    	  scan_requirements_file_only: 'true'
       - name: Security vulnerabilities scan
 	env:
-  	  DEP_PATH: C:\Users\Limbu Khem\Desktop\chatbot/requirements.txt
-	uses: aufdenpunkt/python-safety-check@main
-	with:
-    	  scan_requirements_file_only: 'true'
+  	  DEP_PATH: src/requirements.txt
+      
 
