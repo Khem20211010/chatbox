@@ -1,0 +1,11 @@
+version: '3'
+services:
+  chatbot:
+    image: 7940image
+    environment:
+      - ACCESS_TOKEN=5215543183:AAEPxMK54KYr8I9nLVEJGoggIkK7eqOqbL4
+      - HOST="redis-13857.c263.us-east-1-2.ec2.cloud.redislabs.com"
+      - PASSWORD="pX65UNOGE7ySo41ZjsqHPFrC4hrov1oH"
+      - REDISPORT=13857
+    command: python chatbot.py
+  
