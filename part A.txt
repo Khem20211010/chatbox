@@ -1,0 +1,8 @@
+docker run -d python
+docker cp chatbot.py mycontainer:/
+docker cp requirements.txt mycontainer:/
+docker exec -it mycontainer bash
+pip install pip update
+pip install -r requirements.txt
+docker commit mycontainer 7940image1
+docker run --name lab7partA -d --env ACCESS_TOKEN=5215543183:AAEPxMK54KYr8I9nLVEJGoggIkK7eqOqbL4 --env HOST="redis-13857.c263.us-east-1-2.ec2.cloud.redislabs.com" --env PASSWORD="pX65UNOGE7ySo41ZjsqHPFrC4hrov1oH" --env REDISPORT=13857 7940image1 python chatbot.py
